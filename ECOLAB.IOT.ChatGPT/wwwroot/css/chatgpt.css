@@ -1,0 +1,91 @@
+body {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.container img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+    .container img.right {
+        float: right;
+        margin-left: 20px;
+        margin-right: 0;
+    }
+
+.time-right {
+    float: right;
+    color: #aaa;
+}
+
+.time-left {
+    float: left;
+    color: #999;
+}
+
+
+.form-container {
+    max-width: 100%;
+    padding: 10px;
+    background-color: white;
+}
+
+.form-container textarea {
+    width: 60%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+ }
+
+.form-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    float: right;
+    margin: 150px 0px 0px 0px;
+    opacity: 0.8;
+    min-height: 80px;
+}
+
+.form-container .cancel {
+    background-color: red;
+}
+
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}
