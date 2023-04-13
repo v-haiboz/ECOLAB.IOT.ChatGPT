@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Wme926aOsunlIXSXj+HsSes0GOg0JntaW/ej6/Z+4xk=",
+  "Hash": "ylFUppStodYsP/mWzM4G5v3gWp+UzQ/maDKTnMy86Ug=",
   "Source": "ECOLAB.IOT.ChatGPT",
   "BasePath": "_content/ECOLAB.IOT.ChatGPT",
   "Mode": "Default",
@@ -168,6 +168,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\4.jpg"
+    },
+    {
+      "Identity": "C:\\EcoCode\\ECOLAB.IOT.ChatGPT\\ECOLAB.IOT.ChatGPT\\wwwroot\\img\\ai.png",
+      "SourceId": "ECOLAB.IOT.ChatGPT",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\EcoCode\\ECOLAB.IOT.ChatGPT\\ECOLAB.IOT.ChatGPT\\wwwroot\\",
+      "BasePath": "_content/ECOLAB.IOT.ChatGPT",
+      "RelativePath": "img/ai.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Always",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\ai.png"
+    },
+    {
+      "Identity": "C:\\EcoCode\\ECOLAB.IOT.ChatGPT\\ECOLAB.IOT.ChatGPT\\wwwroot\\img\\input.gif",
+      "SourceId": "ECOLAB.IOT.ChatGPT",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\EcoCode\\ECOLAB.IOT.ChatGPT\\ECOLAB.IOT.ChatGPT\\wwwroot\\",
+      "BasePath": "_content/ECOLAB.IOT.ChatGPT",
+      "RelativePath": "img/input.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Always",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\input.gif"
     },
     {
       "Identity": "C:\\EcoCode\\ECOLAB.IOT.ChatGPT\\ECOLAB.IOT.ChatGPT\\wwwroot\\js\\chatgpt.js",

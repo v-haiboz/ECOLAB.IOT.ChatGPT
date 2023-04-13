@@ -1,32 +1,28 @@
 ﻿using ECOLAB.IOT.ChatGPT.Models;
-using Microsoft.AspNetCore.Http;
+using ECOLAB.IOT.ChatGPT.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECOLAB.IOT.ChatGPT.Controllers
 {
     public class ChatGPTController : Controller
     {
+
         private static readonly string[] Summaries = new[]
     {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
+
+        private readonly IELinkService _eLinkService;
+        public ChatGPTController(IELinkService eLinkService)
+
+        {
+            _eLinkService = eLinkService;
+        }
         // GET: ChatGPTController
         public ActionResult Index()
         {
+            ViewBag.QuestionerImgIndex = Random.Shared.Next(1,4);
             return View();
-        }
-
-
-        [HttpPost(Name = "Chat")]
-        public IEnumerable<WeatherForecast> Chat(ChatMessage chatMessage)
-        {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
         }
 
         // GET: ChatGPTController/Details/5

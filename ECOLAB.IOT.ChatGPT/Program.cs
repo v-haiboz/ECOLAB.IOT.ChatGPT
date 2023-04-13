@@ -8,6 +8,9 @@ namespace ECOLAB.IOT.ChatGPT
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddRepositories()
+                .AddServices()
+                .AddProviders();
 
             var app = builder.Build();
 

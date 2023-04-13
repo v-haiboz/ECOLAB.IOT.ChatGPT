@@ -1,12 +1,18 @@
 ﻿using ECOLAB.IOT.ChatGPT.Models;
-using ECOLAB.IOT.ChatGPT.Models.Dtos;
+using ECOLAB.IOT.ChatGPT.Service;
 using Microsoft.AspNetCore.Mvc;
-using System;
 
 namespace ECOLAB.IOT.ChatGPT.Controllers
 {
     public class ChatGPTAPIController : ControllerBase
     {
+        private readonly IELinkService _eLinkService;
+        public ChatGPTAPIController(IELinkService eLinkService)
+
+        {
+            _eLinkService = eLinkService;
+        }
+
         private static readonly string[] Summaries = new[]
         {
            "Nah, 洗碗机的事情问CHENKAI & ESON. IOT的所有的事情问XUDONG. 软件问题ZHANG YING & ZHANG JIAN & yichang 测试问题找peiguo & wang huai 如果真的不行，试试找一下ziwei.",
@@ -20,13 +26,24 @@ namespace ECOLAB.IOT.ChatGPT.Controllers
         };
 
         [HttpPost(Name = "Chat")]
-        public WeatherForecast Chat(ChatMessage chatMessage)
+        public async Task<WeatherForecast> Chat(ChatMessage chatMessage)
         {
+            var summary = Summaries[Random.Shared.Next(Summaries.Length)];
+            
+            if(chatMessage != null && !string.IsNullOrEmpty(chatMessage.Content) && chatMessage.Content.ToLower().Contains("DMC".ToLower()))
+            {
+                var result = await _eLinkService.QueryDiagnose(chatMessage.Content);
+                if (!string.IsNullOrEmpty(result))
+                {
+                    summary = result;
+                }
+            }
+
             return new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(1),
                 TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+                Summary = summary
             };
         }
     }
